@@ -1,0 +1,10 @@
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\QuickEditing.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\QuickEditing.pdb
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\Community.VisualStudio.Toolkit.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\Microsoft.SqlServer.TransactSql.ScriptDom.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\Microsoft.VisualStudio.DpiAwareness.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\Microsoft.VisualStudio.TaskRunnerExplorer.14.0.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\Microsoft.VisualStudio.Web.BrowserLink.12.0.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\QuickEditing.pkgdef
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\createTemplateManifests.cache
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\extension.vsixmanifest
