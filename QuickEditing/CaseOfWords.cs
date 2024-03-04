@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using Community.VisualStudio.Toolkit;
+using EnvDTE;
 using Microsoft.SqlServer.TransactSql.ScriptDom;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
+using Microsoft.VisualStudio.Text;
+using Microsoft.VisualStudio.Text.Editor;
 using Task = System.Threading.Tasks.Task;
 
 namespace QuickEditing
@@ -103,17 +108,23 @@ namespace QuickEditing
                 string script = new String(docView.TextView.TextSnapshot.ToCharArray(0, docView.TextView.TextSnapshot.Length));
                 TSqlFragment fragment = parser.Parse(new StringReader(script), out errors);
 
-                var Script = fragment as TSqlScript;
+                var script2 = fragment as TSqlScript;
 
                 List<String> scriptsWord = this.GetScriptsWords(fragment);
 
-                using (var edit = docView.TextBuffer?.CreateEdit())
+                var point = docView.TextView.Caret.Position.BufferPosition;
+                int position = point.Position;
+
+                using (var edit = docView.TextBuffer.CreateEdit(EditOptions.DefaultMinimalChange, 0, null))
                 {
                     edit.Replace(0, docView.TextBuffer.CurrentSnapshot.Length, String.Join("", scriptsWord));
                     edit.Apply();
                 }
+
+
+                docView.TextView.Caret.MoveTo(new SnapshotPoint(docView.TextView.TextSnapshot, position));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }
