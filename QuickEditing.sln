@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.34112.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseOfWords", "QuickEditing\CaseOfWords.csproj", "{333850C1-C4FD-4DBE-97F1-80A8AE130B57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseOfWords", "CaseOfWords\CaseOfWords.csproj", "{333850C1-C4FD-4DBE-97F1-80A8AE130B57}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecutionOnAllInstances", "ExecutionOnAllInstances\ExecutionOnAllInstances.csproj", "{46BBDC09-A7DB-4AC1-BBD2-166E689D37AF}"
 EndProject
