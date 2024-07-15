@@ -88,48 +88,38 @@ namespace QuickEditing
             Instance = new CaseOfWords(package, commandService);
         }
 
-        /// <summary>
-        /// This function is the callback used to execute the command when the menu item is clicked.
-        /// See the constructor to see how the menu item is associated with this function using
-        /// OleMenuCommandService service and MenuCommand class.
-        /// </summary>
-        /// <param name="sender">Event sender.</param>
-        /// <param name="e">Event args.</param>
+        // TODO: 5 строк.
         private async void Execute(object sender, EventArgs e)
         {
-            try
-            {
-                var parser = new TSql160Parser(false);
-                IList<ParseError> errors;
-                DocumentView docView = await VS.Documents.GetActiveDocumentViewAsync();
-                if (docView?.TextView is null)
-                    return;
+           var parser = new TSql160Parser(false);
+           IList<ParseError> errors;
+           DocumentView docView = await VS.Documents.GetActiveDocumentViewAsync();
+           if (docView?.TextView is null)
+               return;
+          
+           string script = new String(docView.TextView.TextSnapshot.ToCharArray(0, docView.TextView.TextSnapshot.Length));
+           TSqlFragment fragment = parser.Parse(new StringReader(script), out errors);
+          
+           var script2 = fragment as TSqlScript;
+          
+           List<String> scriptsWord = this.GetScriptsWords(fragment);
+           var newQuery = String.Join("", scriptsWord);
 
-                string script = new String(docView.TextView.TextSnapshot.ToCharArray(0, docView.TextView.TextSnapshot.Length));
-                TSqlFragment fragment = parser.Parse(new StringReader(script), out errors);
-
-                var script2 = fragment as TSqlScript;
-
-                List<String> scriptsWord = this.GetScriptsWords(fragment);
-
-                var point = docView.TextView.Caret.Position.BufferPosition;
-                int position = point.Position;
-
-                using (var edit = docView.TextBuffer.CreateEdit(EditOptions.DefaultMinimalChange, 0, null))
-                {
-                    edit.Replace(0, docView.TextBuffer.CurrentSnapshot.Length, String.Join("", scriptsWord));
-                    edit.Apply();
-                }
-
-
-                docView.TextView.Caret.MoveTo(new SnapshotPoint(docView.TextView.TextSnapshot, position));
+            if (newQuery == script) {
+                return;
             }
-            catch (Exception ex)
-            {
+          
+           var point = docView.TextView.Caret.Position.BufferPosition;
+           int position = point.Position;
 
-            }
+            
+            var lengthQuery = docView.TextBuffer.CurrentSnapshot.Length;
+            docView.TextBuffer.Replace(new Span(0, lengthQuery), newQuery);
+          
+           docView.TextView.Caret.MoveTo(new SnapshotPoint(docView.TextView.TextSnapshot, position));
         }
 
+        // TODO: 5 строк.
         private List<String> GetScriptsWords(TSqlFragment fragment) {
             var scriptsWord = new List<String>();
 

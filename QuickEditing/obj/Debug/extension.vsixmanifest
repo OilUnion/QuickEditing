@@ -15,6 +15,6 @@
     <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
   </Prerequisites>
   <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="QuickEditing.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="CaseOfWords.pkgdef" />
   </Assets>
 </PackageManifest>

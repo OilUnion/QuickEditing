@@ -1,0 +1,7 @@
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\CaseOfWords.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\CaseOfWords.pdb
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\Microsoft.SqlServer.TransactSql.ScriptDom.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\CaseOfWords.pkgdef
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\Community.VisualStudio.Toolkit.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\createTemplateManifests.cache
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\QuickEditing\\extension.vsixmanifest
